@@ -8,23 +8,15 @@ function useLocalStorag(itemName, objectItem) {
 
   React.useEffect(() => {
     setTimeout(() => {
-      try {
-        console.log("ITEM", localStorage.getItem(itemName));
+      try { 
         const localStorageTodos = localStorage.getItem(itemName);
         let parsedItem;
 
-        if (!localStorageTodos) {
-          console.log("localStorage-uno", localStorageTodos);
+        if (!localStorageTodos) { 
           localStorage.setItem(itemName, JSON.stringify(objectItem));
           parsedItem = objectItem;
         } else {
-          parsedItem = JSON.parse(localStorageTodos);
-          console.log(
-            "localStorage-dos",
-            localStorageTodos,
-            parsedItem,
-            localStorage
-          );
+          parsedItem = JSON.parse(localStorageTodos); 
         }
 
         setItem(parsedItem);
@@ -38,14 +30,7 @@ function useLocalStorag(itemName, objectItem) {
   const saveItem = (newITem) => {
     try {
       const stringgifiedTodos = JSON.stringify(newITem);
-      localStorage.setItem(itemName, stringgifiedTodos);
-      console.log(
-        "STRINGIFY",
-        stringgifiedTodos,
-        itemName,
-        localStorage,
-        localStorage.setItem(itemName, stringgifiedTodos)
-      );
+      localStorage.setItem(itemName, stringgifiedTodos); 
       setItem(newITem);
     } catch (error) {
       setError(error);

@@ -9,20 +9,13 @@ import { Modal } from "../modal";
 import { TodoForm } from "../todoForm";
 
 function AppUi() {
-  const {
-    text,
-    completed,
+  const { 
     loading,
-    error,
-    completedTodos,
-    todoTotal,
-    searchValue,
-    setSearchValue,
+    error, 
     searchedTodos,
     completeTodo,
     deleteTodo,
-    openModal,
-    setOpenModal,
+    openModal  
   } = useContext(TodoContext);
 
   console.log("SEARCH-TODO");
@@ -52,7 +45,7 @@ function AppUi() {
           <TodoForm></TodoForm>
         </Modal>
       )}
-      <CreateTodoButton setOpenModal={setOpenModal} />
+      <CreateTodoButton />
     </React.Fragment>
   );
 }
